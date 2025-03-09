@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reder - Your PDF Manager</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #ffffff;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      background-color: #1F1F1F;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+    }
+
+    header h1 {
+      margin: 10px 0 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin: 5px 0;
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    .cta-button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features li {
+      background-color: #1F1F1F;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1F1F1F;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #007BFF;
+    }
+
+    /* Dark/Light Mode Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Light Mode Styles */
+    body.light-mode {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    body.light-mode header,
+    body.light-mode .features li,
+    body.light-mode footer {
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    body.light-mode .features li {
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="Reder Logo">
+    <h1>Reder</h1>
+    <p>Your Ultimate PDF Manager</p>
+    <a href="https://play.google.com/store/apps/details?id=com.reder" class="cta-button">Download Now</a>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Features</h2>
+    <ul>
+      <li>Sync PDFs across devices</li>
+      <li>Access your files from anywhere using your unique ID</li>
+      <li>Create folders to organize your documents</li>
+      <li>Download files for offline viewing</li>
+      <li>Acts as a powerful PDF viewer</li>
+      <li>View Excel files stored outside the app</li>
+      <li>Light and dark modes for comfortable viewing</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Reder. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
+  </footer>
+
+  <!-- Dark/Light Mode Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Light Mode</button>
+
+  <script>
+    // Dark/Light Mode Toggle
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("light-mode");
+      const button = document.querySelector(".theme-toggle");
+      if (body.classList.contains("light-mode")) {
+        button.textContent = "Toggle Dark Mode";
+      } else {
+        button.textContent = "Toggle Light Mode";
+      }
+    }
+  </script>
+</body>
+</html>
