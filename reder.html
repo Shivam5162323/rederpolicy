@@ -34,6 +34,7 @@
     header img {
       width: 100px;
       height: auto;
+      transition: filter 0.3s;
     }
 
     header h1 {
@@ -124,12 +125,16 @@
     body.light-mode .features li {
       border: 1px solid #ddd;
     }
+
+    body.light-mode header img {
+      filter: invert(1); /* Invert logo color for light mode */
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <img src="logo.png" alt="Reder Logo">
+    <img src="logo-dark.png" alt="Reder Logo" id="logo">
     <h1>Reder</h1>
     <p>Your Ultimate PDF Manager</p>
     <a href="https://play.google.com/store/apps/details?id=com.reder" class="cta-button">Download Now</a>
@@ -163,10 +168,14 @@
       const body = document.body;
       body.classList.toggle("light-mode");
       const button = document.querySelector(".theme-toggle");
+      const logo = document.getElementById("logo");
+
       if (body.classList.contains("light-mode")) {
         button.textContent = "Toggle Dark Mode";
+        logo.src = "logo-light.png"; // Switch to light mode logo
       } else {
         button.textContent = "Toggle Light Mode";
+        logo.src = "logo-dark.png"; // Switch to dark mode logo
       }
     }
   </script>
