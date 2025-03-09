@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deletion Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Request Account Deletion</h2>
+        <p>If you wish to delete your account and associated data, please enter your email below and submit your request.</p>
+        <p>Data that will be deleted: Personal details, messages, and any stored content. Some data may be retained for legal or security purposes.</p>
+        
+        <input type="email" id="userEmail" placeholder="Enter your email" required>
+        <button onclick="sendEmail()">Request Account Deletion</button>
+    </div>
+    
+    <script>
+        function sendEmail() {
+            let email = document.getElementById('userEmail').value;
+            if (email) {
+                window.location.href = `mailto:vendvl.0@gmail.com?subject=Account Deletion Request&body=Please delete my account associated with ${email}`;
+                alert('You will be contacted for verification regarding this request.');
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
+</body>
+</html>
